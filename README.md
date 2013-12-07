@@ -5,6 +5,8 @@ Sensor code from Sushack 2013 - http://www.sushack.co.uk/
 Initial configuration:
  * Ciseco RFu-328 (SRF radio + ATMega328 module) with an ultrasonic sensor
  * temporary: a TFT LCD to display distance 
+
+![](https://raw.github.com/sushack/sensor-firmware/master/2013-11-003.jpg)
   
 ## Output 
  * LLAP to transmit sensor readings
