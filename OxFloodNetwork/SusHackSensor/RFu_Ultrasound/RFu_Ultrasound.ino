@@ -1,3 +1,7 @@
+#include <Ultrasonic.h>
+
+#include <Ultrasonic.h>
+
 /**
  * SUSHACK 2013 - http://www.sushack.co.uk/ Sensor hack for OxFloodNetwork
  * Use Ciseco RFu-328 and Ultrasound sensor
@@ -16,9 +20,11 @@
  */
 
 // Ciseco LLAP library
+// https://github.com/CisecoPlc/LLAPSerial
 #include "LLAPSerial.h"
 
 // Ultrasonic sensor library
+// https://github.com/Seeed-Studio/Grove_Ultrasonic_Ranger
 #include "Ultrasonic.h"
 
 // Set this device ID to R1
@@ -56,8 +62,9 @@ void setup() {
 void loop() {  
   
   // Read the untrasonic sensor distance
-  ultrasonic.MeasureInCentimeters();
-  int cm = ultrasonic.RangeInCentimeters;
+  long cm = ultrasonic.MeasureInCentimeters();
+//  ultrasonic.MeasureInCentimeters();
+//                                                                                                                                                                                                             int cm = ultrasonic.RangeInCentimeters;
 
   // Send the message
   LLAP.sendInt( "RIVR", cm );
